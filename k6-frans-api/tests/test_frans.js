@@ -16,6 +16,22 @@ export const options = {
     iterations: 3,
 };
 
+export function add_student() {
+    // Create student to the /frans endpoint
+    const payload = JSON.stringify({
+        "name": "Test Student",
+        "age": 20,
+        "grade" : "A"
+    });
+
+    const response = http.post(`${BASE_URL}/student`, payload, params);
+
+    console.log(response);
+    
+    // Sleep for a short duration to simulate user think time
+    sleep(1);
+}
+
 // export default function () {
     // Make a GET request to the /frans endpoint
 //    const response = http.get(`${BASE_URL}/student`, params);
@@ -26,33 +42,17 @@ export const options = {
 //   sleep(1);
 //}
 
-
-//export default function () {
-    // Create student to the /frans endpoint
-//    const payload = JSON.stringify({
-//        "name": "Test Student",
-//        "age": 20,
-//        "grade" : "A"
-//    });
-
-//    const response = http.post(`${BASE_URL}/student`, payload, params);
-
-//    console.log(response);
-    
-    // Sleep for a short duration to simulate user think time
-//    sleep(1);
-//}
-
 export default function () {
     // Edit student to the /frans endpoint
+    add_student();
     const payload = JSON.stringify({
         "name": "Test Student Edited",
         "age": 21,
         "grade" : "A+",
-        "ID": 1
+        "ID": 5
     });
 
-    const response = http.put(`${BASE_URL}/student/1`, payload, params);
+    const response = http.put(`${BASE_URL}/student/5`, payload, params);
 
     console.log(response);
 }
