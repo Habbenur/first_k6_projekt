@@ -55,5 +55,13 @@ export default function () {
     const response = http.put(`${BASE_URL}/student/5`, payload, params);
 
     console.log(response);
+
+    // Delete student from the /frans endpoint
+    const deleteResponse = http.del(`${BASE_URL}/student/6`, null, params);
+
+    console.log(deleteResponse);
+    
+    // Sleep for a short duration to simulate user think time
+    sleep(1);
 }
 
