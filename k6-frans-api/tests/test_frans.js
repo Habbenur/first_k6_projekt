@@ -58,8 +58,23 @@ export default function () {
 
     // Delete student from the /frans endpoint
     const deleteResponse = http.del(`${BASE_URL}/student/6`, null, params);
+    const deleteResponse2 = http.del(`${BASE_URL}/student/10`, null, params);
+    const deleteResponse3 = http.del(`${BASE_URL}/student/11`, null, params);
+    const deleteResponse4 = http.del(`${BASE_URL}/student/12`, null, params);
+    const deleteResponse5 = http.del(`${BASE_URL}/student/13`, null, params);
+    const deleteResponse6 = http.del(`${BASE_URL}/student/14`, null, params);
 
     console.log(deleteResponse);
+    console.log(deleteResponse2);
+    console.log(deleteResponse3);
+    console.log(deleteResponse4);
+    console.log(deleteResponse5);
+    console.log(deleteResponse6);
+
+    // Get all students from the /frans endpoint
+    const getResponse = http.get(`${BASE_URL}/student`, params);
+    console.log(getResponse);
+
     
     // Sleep for a short duration to simulate user think time
     sleep(1);
