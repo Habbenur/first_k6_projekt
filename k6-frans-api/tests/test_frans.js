@@ -16,29 +16,29 @@ export const options = {
     iterations: 3,
 };
 
- export default function () {
+// export default function () {
     // Make a GET request to the /frans endpoint
-    const response = http.get(`${BASE_URL}/student`, params);
+//    const response = http.get(`${BASE_URL}/student`, params);
+
+//    console.log(response);
+    
+    // Sleep for a short duration to simulate user think time
+//   sleep(1);
+//}
+
+
+export default function () {
+    // Create student to the /frans endpoint
+    const payload = JSON.stringify({
+        "name": "Test Student",
+        "age": 20,
+        "grade" : "A"
+    });
+
+    const response = http.post(`${BASE_URL}/student`, payload, params);
 
     console.log(response);
     
     // Sleep for a short duration to simulate user think time
     sleep(1);
 }
-
-
-//export default function () {
-    // Make a create student to the /frans endpoint
- //   const payload = JSON.stringify({
-  //      "name": "Test Student",
-  //      "age": 20,
-  //      "grade" : "A"
- //   });
-
- //   const response = http.post(`${BASE_URL}/student`, payload, params);
-
- //   console.log(response);
-    
-    // Sleep for a short duration to simulate user think time
- //   sleep(1);
-//}
