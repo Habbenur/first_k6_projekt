@@ -1,5 +1,5 @@
 import http from 'k6/http';
-import { editStudentById, generateStudent, getStudentById, deleteStudentById } from "./generateStudent.js";
+import { editStudentById, generateStudent, getStudentById, deleteStudentById, getAllStudents } from "./generateStudent.js";
 import { check, sleep } from "k6";
 
 const BASE_URL = 'https://test-379574553568.us-central1.run.app/student'; 
@@ -21,6 +21,7 @@ export const options = {
         'http_req_duration{name:get_student}': ['p(95)<200'],
         'http_req_duration{name:edit_student}': ['p(95)<200'],
         'http_req_duration{name:delete_student}': ['p(95)<200'],
+        'http_req_duration{name:get_all_students}': ['p(95)<200'],
     }
 };
 
@@ -50,6 +51,10 @@ export default function () {
     const deleteResponse = deleteStudentById(10);
     console.log(`Deleted student with ID 10: ${JSON.stringify(deleteResponse)}`);
 
+    sleep(1);
+    //Get all students
+    const getAllResponse = getAllStudents();
+    console.log(`Got all students: ${JSON.stringify(getAllResponse)}`);
     sleep(1);
 
 }   

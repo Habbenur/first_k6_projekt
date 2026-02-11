@@ -77,3 +77,18 @@ export function deleteStudentById(id) {
     
 
 }
+// get all students
+export function getAllStudents() {
+    const BASE_URL = 'https://test-379574553568.us-central1.run.app/student';
+    const API_KEY = 'habbe_testar_k6_generate';
+    
+    const params = {
+        headers: {
+            'Content-Type': 'application/json',
+            'API_KEY': API_KEY,
+        },
+    };
+
+    const response = http.get(BASE_URL, params, { tags: { name: 'get_all_students' } });
+    return response.json();
+}
