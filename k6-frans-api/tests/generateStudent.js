@@ -87,8 +87,9 @@ export function getAllStudents() {
             'Content-Type': 'application/json',
             'API_KEY': API_KEY,
         },
+        tags: {name:'get_all_students' }
     };
 
-    const response = http.get(BASE_URL, params, { tags: { name: 'get_all_students' } });
+    const response = http.get(BASE_URL, params);
     return response.json();
 }
